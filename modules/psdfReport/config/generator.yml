@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           psdfReport
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          psdf_report
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        file_name:
+          label:           Archivo
+          help:            Nombre del archivo alojado en '<?php echo sfConfig::get('psdf_reports_dir') ?>', por ejemplo mireporte.jrxml
+      list:
+        object_actions:
+          _delete:         ~
+          _edit:           ~
+          construir:       { label: Execute, action: run }
+      filter:
+        display:           [name]
+      form:    ~
+      edit:    ~
+      new:     ~

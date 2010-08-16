@@ -1,0 +1,8 @@
+PsdfReport:
+  tableName: psdf_report
+  columns:
+    name:             { type: varchar(250), notnull: true }
+    file_name:        { type: varchar(250), notnull: true, unique: true }
+    connection:       { type: varchar(100), notnull: false }
+    enabled:          { type: boolean, default: true }
+

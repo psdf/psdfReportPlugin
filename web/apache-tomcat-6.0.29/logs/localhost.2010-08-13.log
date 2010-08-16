@@ -1,0 +1,44 @@
+13/08/2010 17:20:49 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+13/08/2010 17:20:49 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+13/08/2010 17:48:23 org.apache.catalina.core.ApplicationContext log
+INFO: PhpJavaServlet: PHP/Java Bridge servlet /home/gustavo/NetBeansProjects/psdfcore/web/psdfReportPlugin/apache-tomcat-6.0.29/webapps/JasperReport version 5.5.4.1     ready.
+13/08/2010 20:27:30 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+13/08/2010 20:27:30 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+13/08/2010 20:29:44 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+13/08/2010 20:29:44 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+13/08/2010 20:29:44 org.apache.catalina.core.ApplicationContext log
+INFO: PhpJavaServlet: PHP/Java Bridge servlet /home/gustavo/NetBeansProjects/psdfcore/web/psdfReportPlugin/apache-tomcat-6.0.29/webapps/JasperReport version 5.5.4.1     ready.
+13/08/2010 20:30:08 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+13/08/2010 20:30:08 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+13/08/2010 20:31:00 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+13/08/2010 20:31:00 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+13/08/2010 20:31:14 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+13/08/2010 20:31:14 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+13/08/2010 23:18:09 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+13/08/2010 23:18:09 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+13/08/2010 23:18:42 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+13/08/2010 23:18:42 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+13/08/2010 23:18:43 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+13/08/2010 23:18:43 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+13/08/2010 23:19:02 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+13/08/2010 23:19:02 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()

@@ -1,0 +1,86 @@
+12/08/2010 12:56:32 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+12/08/2010 12:56:32 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+12/08/2010 13:04:07 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+12/08/2010 13:04:07 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+12/08/2010 13:05:22 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+12/08/2010 13:05:22 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+12/08/2010 13:05:53 org.apache.catalina.core.ApplicationContext log
+INFO: PhpJavaServlet: PHP/Java Bridge servlet /home/gustavo/NetBeansProjects/psdfcore/web/apache-tomcat-6.0.29/webapps/JasperReport version 5.5.4.1     ready.
+12/08/2010 13:05:58 org.apache.catalina.core.ApplicationContext log
+GRAVE: Exception occured
+java.lang.ClassNotFoundException: net.sf.jasperreports.engine.JasperCompileManager
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1645)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1491)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at php.java.bridge.SimpleJavaBridgeClassLoader.forName(SimpleJavaBridgeClassLoader.java:127)
+	at php.java.bridge.JavaBridge.CreateObject(JavaBridge.java:449)
+	at php.java.bridge.Request.handleRequest(Request.java:440)
+	at php.java.bridge.Request.handleRequests(Request.java:491)
+	at php.java.servlet.PhpJavaServlet.handleHttpConnection(PhpJavaServlet.java:318)
+	at php.java.servlet.PhpJavaServlet.handlePut(PhpJavaServlet.java:340)
+	at php.java.servlet.PhpJavaServlet.doPut(PhpJavaServlet.java:349)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:640)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:636)
+12/08/2010 13:30:47 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+12/08/2010 13:30:47 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+12/08/2010 13:32:25 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+12/08/2010 13:32:25 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+12/08/2010 13:34:45 org.apache.catalina.core.ApplicationContext log
+INFO: PhpJavaServlet: PHP/Java Bridge servlet /home/gustavo/NetBeansProjects/psdfcore/web/apache-tomcat-6.0.29/webapps/JasperReport version 5.5.4.1     ready.
+12/08/2010 13:34:54 org.apache.catalina.core.ApplicationContext log
+GRAVE: Exception occured
+java.lang.ClassNotFoundException: net.sf.jasperreports.engine.JasperCompileManager
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1645)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1491)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at php.java.bridge.SimpleJavaBridgeClassLoader.forName(SimpleJavaBridgeClassLoader.java:127)
+	at php.java.bridge.JavaBridge.CreateObject(JavaBridge.java:449)
+	at php.java.bridge.Request.handleRequest(Request.java:440)
+	at php.java.bridge.Request.handleRequests(Request.java:491)
+	at php.java.servlet.PhpJavaServlet.handleHttpConnection(PhpJavaServlet.java:318)
+	at php.java.servlet.PhpJavaServlet.handlePut(PhpJavaServlet.java:340)
+	at php.java.servlet.PhpJavaServlet.doPut(PhpJavaServlet.java:349)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:640)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:636)
+12/08/2010 13:37:55 org.apache.catalina.core.ApplicationContext log
+INFO: PhpJavaServlet: PHP/Java Bridge servlet /home/gustavo/NetBeansProjects/psdfcore/web/apache-tomcat-6.0.29/webapps/JasperReport version 5.5.4.1     ready.
+12/08/2010 14:33:25 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+12/08/2010 14:33:25 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
