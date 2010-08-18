@@ -1,0 +1,11 @@
+# Modificacion ejemplo
+
+psdf_report:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                psdfReport
+    module:               psdfReport
+    prefix_path:          psdfReport
+    column:               id
+    with_wildcard_routes: true
+
