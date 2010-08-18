@@ -26,8 +26,10 @@ abstract class PluginPsdfReport extends BasePsdfReport {
         }
 
         // Corrigo posibles rutas incorrectas en imagenes
-        $reportFileName = $this->fixImagePath($reportFileName);
-
+        $jrxml = new psdfJrXml($reportFileName);
+        $jrxml->fixPathImages( sfConfig::get('psdf_reports_resource_dir') );
+        $jrxml->file_save();
+        
         // Parametros (a que sea dinamico)
         /* $params['fecha_desde'] = $this->getRequestParameter('fechadesde');
         $params['fecha_hasta'] = $this->getRequestParameter('fechahasta');
@@ -84,7 +86,7 @@ abstract class PluginPsdfReport extends BasePsdfReport {
             // a pdf
             if( $output==PluginPsdfReportTable::TO_PDF ) {
                 $sJem->exportReportToPdfFile($print, $salidaFileName);
-                psdfReportPluginUtil::download($salidaFileName, $this->getName());
+                psdfReportPluginUtil::download($salidaFileName, $this->getName().'.'.$output);
             }
         }
         catch (JavaException $ex) {
