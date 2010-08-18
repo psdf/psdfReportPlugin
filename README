@@ -1,0 +1,101 @@
+psdfReportPlugin
+==================
+
+Introducción
+--------
+
+psdfReportPlugin es un paquete que integra la ejecución de reportes con la ingenieria JasperReports.
+Actualmente integra jasperReports en su version 3.7.4 (http://jasperforge.org/projects/jasperreports)
+
+Los reportes se diseñan con la herramienta openSource iReport (http://jasperforge.org/projects/ireport) también
+en su version 3.7.4
+
+Instalación
+------------
+
+* Descargar y descomprimir el plugin psdfReportPlugin en la carpeta /plugins del proyecto
+
+        $ cd [carpeta_proyecto]/plugins
+        $ tar -zxvf psdfReportPlugin.tar.gz .
+
+
+* Limpiar la cache
+
+        $ cd [carpeta_proyecto]
+        $ php symfony cc
+
+* Actualizar el modelo, forms y filters
+
+        $ php symfony doctrine:build-model
+        $ php symfony doctrine:build-sql
+        $ php symfony doctrine:build-forms
+        $ php symfony doctrine:build-filters
+
+* Crear la tabla en base de datos usando su sintaxis SQL generada en /data/sql/schema.sql
+
+* Crear carpetas /data/reports y data/reports/img y darle permisos de escritura (en linux)
+
+        $ cd [carpeta_proyecto]/data
+        $ mkdir -p reports/img
+        $ chmod 777 reports
+
+Configuración
+-------------
+
+* Habilitar el plugin psdfReportPlugin en el proyecto en el archivo /config/ProjectConfiguration.class.php:
+
+        class ProjectConfiguration extends sfProjectConfiguration
+        {
+            public function setup()
+            {
+                $this->enablePlugins( array( 'sfDoctrinePlugin',
+                                             'psdfReportPlugin' ) );
+            }
+        }
+
+* Crear un enlace symbolico en la carpeta web
+
+        $ cd [carpeta_proyecto]/web
+        $ ln -s ../plugins/psdfReportPlugin/web psdfReportPlugin
+
+* Habilitar el modulo en la application en /apps/[your app]/config/settings.yml
+
+        enabled_modules:  [psdfReportPlugin]
+
+Diseño y alta del reporte
+-------------------------
+
+* Diseñar el reporte con iReport 3.7.4 (http://jasperforge.org/projects/ireport)
+
+* Guardar el reporte (archivo .jrxml) y sus recursos (imagenes, etc..) en /data/reports
+
+* Acceder al modulo psdfReport (htt://localhost/app/psdfReport) y dar de alta el reporte especificando
+su nombre, el archivo jrxml, y la conexion a utilizar (esto ultimo solo si hay más de una conexion definida en /config/databases.yml)
+
+Ejecución
+---------
+
+* Iniciar apache-tomcat con las librerias jasperReports ejecutando la tarea
+
+        $ php symfony psdf:start-tomcat-javabridge
+
+Esta es una tarea como opcion para desarrollo, en producción el apache-tomcat debe iniciarse como un cron desde el SO
+
+* Puede ejecutarse un reporte a modo prueba o verificación desde el propio modulo psdfReport
+
+* Tambien puede invocarse el reporte desde una acción
+
+        ...
+        $rep = PluginPsdfReportTable::getByNameOrId('report1');
+        $rep->execute(PluginPsdfReportTable::TO_PDF);
+        ...
+
+Contact
+-------
+
+* Proyecto PSDF, [http://www.proyecto-psdf.com.ar](http://www.proyecto-psdf.com.ar)
+
+Log de cambios
+---------
+
+* Version 1.0.0 : lanzamiento inicial
