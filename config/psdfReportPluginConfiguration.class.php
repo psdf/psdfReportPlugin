@@ -12,5 +12,6 @@ class psdfReportPluginConfiguration extends sfPluginConfiguration
 
     // Ruta donde almacenar y levantar los reportes y sus recursos
     sfConfig::set('psdf_reports_dir', sfConfig::get('sf_data_dir').DIRECTORY_SEPARATOR.'reports');
+    sfConfig::set('psdf_reports_resource_dir', sfConfig::get('psdf_reports_dir').DIRECTORY_SEPARATOR.'img');
   }
 }
