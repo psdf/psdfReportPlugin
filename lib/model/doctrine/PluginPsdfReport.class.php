@@ -14,10 +14,10 @@ abstract class PluginPsdfReport extends BasePsdfReport {
 
     public function execute( $output, Doctrine_Connection $con=null ) {
 
-        require_once(sfConfig::get('psdf_jasperreports_inc'));
-
+        require_once(sfConfig::get('psdf_report_java_inc'));
+        
         //Declare the paths where the JRXML Reports are stored)
-        $reportFileName = sfConfig::get('psdf_reports_dir').DIRECTORY_SEPARATOR.$this->getFileName();
+        $reportFileName = sfConfig::get('psdf_report_dir').DIRECTORY_SEPARATOR.$this->getFileName();
         $salidaFileName = tempnam(sys_get_temp_dir(), 'jr').'.'.$output;
 
         if( !file_exists($reportFileName) ) {
@@ -27,7 +27,7 @@ abstract class PluginPsdfReport extends BasePsdfReport {
 
         // Corrigo posibles rutas incorrectas en imagenes
         $jrxml = new psdfJrXml($reportFileName);
-        $jrxml->fixPathImages( sfConfig::get('psdf_reports_resource_dir') );
+        $jrxml->fixPathImages( sfConfig::get('psdf_report_resource_dir') );
         $jrxml->file_save();
         
         // Parametros (a que sea dinamico)
@@ -96,14 +96,4 @@ abstract class PluginPsdfReport extends BasePsdfReport {
         }
     }
 
-    /**
-     * Copia la definicion xml de la consulta en el archivo $file
-     *
-     * @param string $file Archivo donde guardar la definicion
-     */
-    public function fixImagePath($file) {
-        $fp = fopen($file, 'w');
-        fwrite($fp, $this->getDefinition());
-        fclose($fp);
-    }
 }
