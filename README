@@ -10,14 +10,24 @@ Actualmente integra jasperReports en su version 3.7.4 (http://jasperforge.org/pr
 Los reportes se diseñan con la herramienta openSource iReport (http://jasperforge.org/projects/ireport) también
 en su version 3.7.4
 
-Instalación
-------------
+Instalación y Configuracion
+---------------------------
 
 * Descargar y descomprimir el plugin psdfReportPlugin en la carpeta /plugins del proyecto
 
         $ cd [carpeta_proyecto]/plugins
         $ tar -zxvf psdfReportPlugin.tar.gz .
 
+* Habilitar el plugin psdfReportPlugin en el proyecto en el archivo /config/ProjectConfiguration.class.php:
+
+        class ProjectConfiguration extends sfProjectConfiguration
+        {
+            public function setup()
+            {
+                $this->enablePlugins( array( 'sfDoctrinePlugin',
+                                             'psdfReportPlugin' ) );
+            }
+        }
 
 * Limpiar la cache
 
@@ -31,7 +41,7 @@ Instalación
         $ php symfony doctrine:build-forms
         $ php symfony doctrine:build-filters
 
-* Crear la tabla en base de datos usando su sintaxis SQL generada en /data/sql/schema.sql
+* Crear la tabla psdf_report en base de datos usando su sintaxis SQL generada en /data/sql/schema.sql
 
 * Crear carpetas /data/reports y data/reports/img y darle permisos de escritura (en linux)
 
@@ -39,24 +49,10 @@ Instalación
         $ mkdir -p reports/img
         $ chmod 777 reports
 
-Configuración
--------------
 
-* Habilitar el plugin psdfReportPlugin en el proyecto en el archivo /config/ProjectConfiguration.class.php:
+* Publicar carpeta web del plugin
 
-        class ProjectConfiguration extends sfProjectConfiguration
-        {
-            public function setup()
-            {
-                $this->enablePlugins( array( 'sfDoctrinePlugin',
-                                             'psdfReportPlugin' ) );
-            }
-        }
-
-* Crear un enlace symbolico en la carpeta web
-
-        $ cd [carpeta_proyecto]/web
-        $ ln -s ../plugins/psdfReportPlugin/web psdfReportPlugin
+        $ php symfony plugin:publish-assets psdfReportPlugin
 
 * Habilitar el modulo en la application en /apps/[your app]/config/settings.yml
 
